@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularmocktest": {
+      "hosting": {
+        "MySite": [
+          "angularmocktest"
+        ]
+      }
+    }
+  }
+}

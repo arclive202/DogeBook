@@ -1,0 +1,59 @@
+<div *ngIf="post">
+    <div [hidden]="!editing">
+      
+      <section>
+        <!-- <mat-accordian> -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Update Post
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <!-- <div>
+                    <input type="file" name="file" id="file" (change)="uploadImage($event)">
+                    <div [hidden]="!uploadPercent">
+                        <mat-progress-bar mode="determinate" value="{{uploadPercent | async }}"></mat-progress-bar>
+                    </div>
+                    <div [hidden]="!image">
+                        <img [src]="image">
+                    </div>
+                </div> -->
+                <mat-form-field>
+                    <input matInput placeholder="Post Title" [(ngModel)]="post.title">
+                </mat-form-field>
+                <br/>
+                <mat-form-field>
+                    <textarea matInput placeholder="Content" [(ngModel)]="post.content" rows="10"></textarea>
+                </mat-form-field>
+                <br/>
+                <button mat-raised-button color="accent" (click)="updatePost()" [disabled]="!post.title || !post.content" style="margin:5px;">{{buttontext}}</button>
+                <button mat-raised-button color="accent" (click)="editing=false" style="margin:5px;">Cancel</button>
+                
+            </mat-expansion-panel>
+        <!-- </mat-accordian> -->
+    </section>
+
+    </div>
+
+    <div [hidden]="editing">
+      <div >
+        <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title >{{post.title}}</mat-card-title>
+                  <mat-card-subtitle>{{ post.createdOn.toDate() | date: 'fullDate' }}</mat-card-subtitle>
+                </mat-card-header>
+                <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                <mat-card-content>
+                  <p>
+                    {{post.content}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions align="end" *ngIf="auth.getCurrentUserID() === post.authorID">
+                  <button mat-button (click)="delete()"><mat-icon>delete</mat-icon></button>
+                  <button mat-button (click)="editing=true"><mat-icon>edit</mat-icon></button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+    </div>
+</div>

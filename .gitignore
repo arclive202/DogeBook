@@ -44,3 +44,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#environmentFiles
+/src/environments/**
+
+#global-constants
+/src/apps/global-constants.ts
+/src/apps/global-constants.spec.ts

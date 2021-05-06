@@ -1,0 +1,23 @@
+<br/>
+<section>
+   <!-- <h2 routerLink="{{post.id}}">{{post.title}}</h2>
+   <p>{{post.content}}</p> -->
+    <mat-card class="example-card" *ngFor="let post of posts | async">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title routerLink="{{post.id}}">{{post.title}}</mat-card-title>
+          <mat-card-subtitle>{{post.author}}  &bull; on {{post.createdOn.toDate() | date:'fullDate'}} </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [hidden]="!post.image" src="{{post.image}}" alt="{{post.title}}">
+        <mat-card-content>
+          <!-- <p>
+            {{post.content}}
+          </p> -->
+        </mat-card-content>
+        <mat-card-actions align="end" *ngIf="auth.getCurrentUserID() === post.authorID">
+          <button mat-button (click)="delete(post.id)"><mat-icon>delete</mat-icon></button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <br/>
+</section>>

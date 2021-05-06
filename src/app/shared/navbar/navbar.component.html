@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span routerLink = "/blog">Dogebook</span>
+      <span class="example-spacer"></span> <!-- Added the example spacer class to the CSS file of Navbar component-->
+      <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
+          <button mat-raised-button color="accent" routerLink = "/dashboard">Write a Post</button>
+          <button mat-button (click)="auth.logout()">Logout</button>
+    </div>
+    <ng-template #showLogin>
+        <button mat-button (click)="auth.login()">Login with google</button>
+    </ng-template>
+      <mat-icon>share</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>

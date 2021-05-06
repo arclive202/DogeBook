@@ -120,9 +120,16 @@
               "devServerTarget": "MySite:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "MySite"
+  "defaultProject": "MySite",
+  "cli": {
+    "analytics": "478fea18-9eaf-4917-a700-b6b1862e12a8"
+  }
 }
