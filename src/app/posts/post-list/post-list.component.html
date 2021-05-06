@@ -6,7 +6,7 @@
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title routerLink="{{post.id}}">{{post.title}}</mat-card-title>
-          <mat-card-subtitle>{{post.author}}  &bull; on {{post.createdOn | date:'fullDate'}} </mat-card-subtitle>
+          <mat-card-subtitle>{{post.author}}  &bull; on {{ post.createdOn.toDate() | date:'fullDate' }} </mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image [hidden]="!post.image" src="{{post.image}}" alt="{{post.title}}">
         <mat-card-content>

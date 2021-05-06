@@ -11,7 +11,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  posts!: Observable<Post[]>
+  posts!: any
   CurrentUserdetails!:any
   idVal?:string
   constructor(
@@ -21,8 +21,6 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.posts = this.postService.getPosts()
     this.CurrentUserdetails = this.auth.getCurrentUserID()
-    
-    // console.log()
   }
 
   delete(id: string | undefined)

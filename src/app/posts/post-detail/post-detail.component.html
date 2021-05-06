@@ -41,7 +41,7 @@
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                   <mat-card-title >{{post.title}}</mat-card-title>
-                  <mat-card-subtitle>{{ post.createdOn.toDate() | date: 'fullDate' }}</mat-card-subtitle>
+                  <mat-card-subtitle>{{post.author}}  &bull; on {{ post.createdOn.toDate() | date: 'fullDate' }}</mat-card-subtitle>
                 </mat-card-header>
                 <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
                 <mat-card-content>
