@@ -13,9 +13,10 @@ import { PostService } from '../post.service';
 export class PostListComponent implements OnInit {
   posts!: Observable<Post[]>
   CurrentUserdetails!:any
+  idVal?:string
   constructor(
     private postService: PostService,
-    private auth: AuthService ) { }
+    public auth: AuthService ) { }
 
   ngOnInit(): void {
     this.posts = this.postService.getPosts()
@@ -24,9 +25,10 @@ export class PostListComponent implements OnInit {
     // console.log()
   }
 
-  delete(id: string)
+  delete(id: string | undefined)
   {
-    this.postService.delete(id)
+    this.idVal = id?.toString()
+    this.postService.delete(this.idVal ?? "")
   }
 
   getDate(timestamp: any)
