@@ -1,6 +1,8 @@
-# MySite
+# Dogebook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+This is a prototype blog site which I have worked on using Angular with Firebase to get started with building and deploying a basic site.
+You can visit and check  out the site @ https://angularmocktest.web.app/blog
 
 ## Development server
 
